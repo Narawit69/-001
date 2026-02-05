@@ -55,11 +55,55 @@ src="data:audio/mpeg;base64,SUQzAwAAAAAAGFRYWFgAAAAOAAAAVFhYWABpc282bXA0Mf/7kGQA
 </audio>
 
 <script>
-    const audio = document.querySelector("audio")
-    document.addEventListener("click", () => {
+const audio = document.querySelector("audio");
+
+const unlockAudio = () => {
   audio.muted = false;
-  audio.play();
-});
+  audio.play().catch(() => {});
+
+  events.forEach(e =>
+    document.removeEventListener(e, unlockAudio)
+  );
+};
+
+const events = [
+  // mouse
+  "click",
+  "mousedown",
+  "mouseup",
+
+  // touch
+  "touchstart",
+  "touchend",
+
+  // pointer (covers mouse + touch + pen)
+  "pointerdown",
+  "pointerup",
+
+  // keyboard
+  "keydown",
+  "keyup",
+
+  // focus / visibility
+  "focus",
+  "blur",
+  "focusin",
+  "focusout",
+  "visibilitychange",
+
+  // window-level
+  "resize",
+  "scroll"
+];
+
+// document events
+events.forEach(e =>
+  document.addEventListener(e, unlockAudio, { once: true })
+);
+
+// window focus is special
+window.addEventListener("focus", unlockAudio, { once: true });
+
 </script>
   </main> 
   <aside id="sidebar"></aside> 
