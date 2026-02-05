@@ -1,0 +1,47 @@
+/* ปรับ container ให้เรียงเป็นแนวนอน */
+#sidebar {
+    display: flex;
+    flex-wrap: wrap; /* ถ้าจอมือถือแคบ ปุ่มจะลงมาบรรทัดใหม่เอง */
+    align-items: center;
+    justify-content: center; /* จัดให้อยู่กึ่งกลางหน้าจอ */
+    gap: 15px; /* ระยะห่างระหว่างปุ่ม */
+    background-color: #f0f2f5;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* ปรับหัวข้อให้เข้ากับแนวนอน */
+#sidebar h1 {
+    width: 100%; /* บังคับให้หัวข้ออยู่บรรทัดบนสุด */
+    text-align: center;
+    font-size: 1.2rem;
+    color: #1877f2;
+    margin-bottom: 15px;
+}
+
+/* ปรับปุ่มให้ดูเป็นก้อนๆ แนวนอน */
+#sidebar a {
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #1877f2;
+    padding: 10px 20px;
+    border-radius: 50px; /* ทรงมนสวยงาม */
+    border: 2px solid #1877f2;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* ป้องกันตัวอักษรตัดบรรทัด */
+}
+
+/* Effect เวลา Hover */
+#sidebar a:hover {
+    background-color: #1877f2;
+    color: white;
+    transform: translateY(-5px); /* เด้งขึ้นข้างบนเล็กน้อย */
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+}
+
+/* ซ่อน <br> เพราะเราใช้ Flexbox จัดระเบียบแล้ว */
+#sidebar br {
+    display: none;
+}
