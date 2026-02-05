@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 .text-center {
   text-align: center;
-=======
 /* ปรับ container ให้เรียงเป็นแนวนอน */
 #sidebar {
     display: flex;
@@ -48,5 +46,4 @@
 /* ซ่อน <br> เพราะเราใช้ Flexbox จัดระเบียบแล้ว */
 #sidebar br {
     display: none;
->>>>>>> 07870460ef0376e7bc054a1cc4423f7e1f82ebad
 }
