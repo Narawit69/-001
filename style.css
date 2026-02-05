@@ -1,6 +1,6 @@
 .text-center {
   text-align: center;
-/* ปรับ container ให้เรียงเป็นแนวนอน */
+/* ปรับ container ให้เรียงเป็นแนวนอน */}
 #sidebar {
     display: flex;
     flex-wrap: wrap; /* ถ้าจอมือถือแคบ ปุ่มจะลงมาบรรทัดใหม่เอง */
